@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configuração do Carrossel
     const carousel = document.getElementById('carousel');
     const images = [
-        { src: 'images/image1.jpg', message: 'Essa é o começo de uma linda historia' },
-        { src: 'images/image2.jpg', message: 'Ela decidida que não queria niguem' },
-        { src: 'images/image3.jpg', message: 'Ele tendo certeza que jamais acharia alguem' },
-        { src: 'images/image4.jpg', message: 'Deus olhou para eles e sorrindo disse "Sejam felizes" e os uniu' },
-        { src: 'images/image5.jpg', message: 'Ainda bem que deu aquele like no tinder ein amor kkk' },
-        { src: 'images/image6.jpg', message: 'Jamais eu teria conhecido algem tão fantastisca quanto você' },
-        { src: 'images/image7.jpg', message: 'Nossa historia só esta no começo de muitos anos juntos (210 anos lembra.)' }
+        { src: 'image1.jpg', message: 'Essa é o começo de uma linda historia' },
+        { src: 'image2.jpg', message: 'Ela decidida que não queria niguem' },
+        { src: 'image3.jpg', message: 'Ele tendo certeza que jamais acharia alguem' },
+        { src: 'image4.jpg', message: 'Deus olhou para eles e sorrindo disse "Sejam felizes" e os uniu' },
+        { src: 'image5.jpg', message: 'Ainda bem que deu aquele like no tinder ein amor kkk' },
+        { src: 'image6.jpg', message: 'Jamais eu teria conhecido algem tão fantastisca quanto você' },
+        { src: 'image7.jpg', message: 'Nossa historia só esta no começo de muitos anos juntos (210 anos lembra.)' }
     ];
 
     // Criar itens do carrossel
