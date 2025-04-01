@@ -141,6 +141,247 @@ h2 {
 .carousel-item.flipped img {
     transform: rotateY(180deg);
 }
+.player {
+    background: linear-gradient(145deg, var(--pure-white), var(--soft-pink));
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+    font-family: 'Arial', sans-serif;
+    border: 1px solid rgba(255, 128, 171, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.player::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+}
+
+.player h2 {
+    color: var(--dark-romance);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.song-title {
+    font-size: 1.3rem;
+    color: var(--dark-romance);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.song-artist {
+    font-size: 1rem;
+    color: var(--romantic-rose);
+    font-weight: 400;
+}
+
+.album-cover {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    border: 5px solid var(--soft-pink);
+    box-shadow: 0 5px 15px rgba(173, 20, 87, 0.2);
+    position: relative;
+    animation: rotateCover 20s linear infinite;
+    animation-play-state: paused;
+}
+
+.player.playing .album-cover {
+    animation-play-state: running;
+}
+
+@keyframes rotateCover {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    background: linear-gradient(to bottom, var(--love-blush), var(--deep-love));
+    border: none;
+    color: var(--pure-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.controls button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.4);
+}
+
+.controls button:hover::after {
+    opacity: 1;
+}
+
+.controls button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(233, 30, 99, 0.3);
+}
+
+.controls .play-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--soft-pink);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--romantic-rose), var(--passion-red));
+    width: 0%;
+    border-radius: 10px;
+    position: relative;
+    transition: width 0.1s linear;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--pure-white);
+    border-radius: 50%;
+    border: 2px solid var(--passion-red);
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-container:hover .progress-bar::after {
+    opacity: 1;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--dark-romance);
+    margin-bottom: 20px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.volume-control i {
+    color: var(--romantic-rose);
+    font-size: 18px;
+}
+
+.volume-control input[type="range"] {
+    flex-grow: 1;
+    height: 5px;
+    -webkit-appearance: none;
+    background: var(--soft-pink);
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--love-blush);
+    border-radius: 50%;
+    border: 2px solid var(--pure-white);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .player {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .album-cover {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .controls button {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .controls .play-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+}
 
 /* Estilos do Contador - Tema Romântico */
 .counter-section {

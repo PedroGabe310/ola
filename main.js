@@ -185,6 +185,93 @@ function createLoveParticles() {
  createLoveParticles();
 });
 
+const audioPlayer = document.getElementById('audioPlayer');
+const playBtn = document.getElementById('playBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const progressBar = document.getElementById('progressBar');
+const progressContainer = document.getElementById('progressContainer');
+const currentTimeElement = document.getElementById('currentTime');
+const durationElement = document.getElementById('duration');
+const volumeControl = document.getElementById('volumeControl');
+const player = document.querySelector('.player');
+const albumCover = document.querySelector('.album-cover');
+const playIcon = playBtn.querySelector('i');
 
+// Event listeners
+playBtn.addEventListener('click', togglePlay);
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+progressContainer.addEventListener('click', setProgress);
+volumeControl.addEventListener('input', setVolume);
+audioPlayer.addEventListener('timeupdate', updateProgress);
+audioPlayer.addEventListener('loadedmetadata', updateDuration);
+audioPlayer.addEventListener('ended', nextSong);
+audioPlayer.addEventListener('play', updatePlayButton);
+audioPlayer.addEventListener('pause', updatePlayButton);
+
+// Funções
+function togglePlay() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+    }
+}
+
+function updatePlayButton() {
+    if (audioPlayer.paused) {
+        playIcon.classList.replace('fa-pause', 'fa-play');
+        player.classList.remove('playing');
+    } else {
+        playIcon.classList.replace('fa-play', 'fa-pause');
+        player.classList.add('playing');
+    }
+}
+
+function prevSong() {
+    audioPlayer.currentTime = 0;
+}
+
+function nextSong() {
+    audioPlayer.currentTime = 0;
+    audioPlayer.play();
+}
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audioPlayer.duration;
+    audioPlayer.currentTime = (clickX / width) * duration;
+}
+
+function updateProgress() {
+    const { currentTime, duration } = audioPlayer;
+    const progressPercent = (currentTime / duration) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+    currentTimeElement.textContent = formatTime(currentTime);
+}
+
+function updateDuration() {
+    durationElement.textContent = formatTime(audioPlayer.duration);
+}
+
+function setVolume() {
+    audioPlayer.volume = this.value;
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// Configuração inicial
+audioPlayer.volume = volumeControl.value;
+
+// Tenta reproduzir automaticamente (pode ser bloqueado pelo navegador)
+audioPlayer.play().catch(e => {
+    console.log("Autoplay bloqueado: ", e);
+});
 
 
