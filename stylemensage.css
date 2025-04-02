@@ -1,0 +1,230 @@
+/* Cores da paleta romântica */
+:root {
+    --deep-love: #e91e63;
+    --soft-pink: #f8bbd0;
+    --romantic-rose: #ff80ab;
+    --love-blush: #ff4081;
+    --passion-red: #f50057;
+    --pure-white: #fff9fb;
+    --dark-romance: #ad1457;
+    --light-love: #fce4ec;
+}
+
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--light-love);
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header fixo que desaparece ao rolar */
+header {
+    background: linear-gradient(135deg, var(--deep-love), var(--passion-red));
+    padding: 25px 0;
+    box-shadow: 0 2px 15px rgba(233, 30, 99, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.logo-container {
+    max-width: 1200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.voltar {
+    height: 30px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    margin-right: 860px;
+    margin-left: 30px;    
+}
+
+/* Container do Chat Romântico em Tela Cheia */
+.chat-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    padding-top: 110px; /* Espaço para o header */
+    box-sizing: border-box;
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--deep-love), var(--passion-red));
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+/* Área de Mensagens com scroll */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* margin-bottom: 80px; Espaço para o input */
+}
+
+.message {
+    max-width: 50%;
+    padding: 12px 15px;
+    border-radius: 18px;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.message.received {
+    align-self: flex-start;
+    background-color: var(--soft-pink);
+    border-bottom-left-radius: 5px;
+    margin: 10px 0 10px 100px;
+    padding: 10px 35px 10px 35px;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background: linear-gradient(to right, var(--love-blush), var(--romantic-rose));
+    color: white;
+    border-bottom-right-radius: 5px;
+    margin: 10px 100px 10px auto;
+    padding: 10px 35px 10px 35px;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.message.sent .message-text {
+    color: white;
+}
+
+.message-time {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    margin-top: 3px;
+    opacity: 0.8;
+}
+
+.message.sent .message-time {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Área de Input fixa no rodapé */
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background-color: var(--pure-white);
+    border-top: 1px solid var(--soft-pink);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid var(--soft-pink);
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    background-color: var(--pure-white);
+    color: var(--dark-romance);
+}
+
+.chat-input input::placeholder {
+    color: var(--romantic-rose);
+    opacity: 0.7;
+}
+
+.chat-input button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--deep-love);
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.chat-input button:hover {
+    transform: scale(1.1);
+}
+
+/* Barra de rolagem personalizada */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: var(--soft-pink);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: var(--romantic-rose);
+    border-radius: 10px;
+}

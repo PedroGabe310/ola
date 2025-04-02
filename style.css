@@ -147,7 +147,7 @@ h2 {
     border-radius: 20px;
     width: 100%;
     max-width: 450px;
-    margin: 20px auto;
+    margin: 50px auto;
     box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
     font-family: 'Arial', sans-serif;
     border: 1px solid rgba(255, 128, 171, 0.3);
@@ -453,8 +453,30 @@ h2 {
     color: #555;
 }
 
+.botaomsg {
+
+    background: linear-gradient(145deg, var(--pure-white), var(--soft-pink));
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 250px;
+    margin: 50px auto;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+    font-family:'Courier New', Courier, monospace
+    border: 1px solid rgba(255, 128, 171, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    
+}
+
+.botaomsg a {
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+
 /* Responsividade para iPhone 11 Pro (375px) */
-@media (max-width: 414px) {
+@media (max-width: 435px) {
     header {
         padding: 20px 0;
     }
