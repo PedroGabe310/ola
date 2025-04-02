@@ -228,3 +228,152 @@ header.hidden {
     background-color: var(--romantic-rose);
     border-radius: 10px;
 }
+/* Ajustes específicos para mobile */
+@media only screen and (max-width: 428px) { /* iPhone 13 Pro Max tem 428px de largura */
+    body {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch; /* Suaviza o scroll no iOS */
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .voltar {
+        height: 25px;
+        margin-right: auto; /* Ajuste para mobile */
+        margin-left: 15px;
+    }
+
+    .chat-container {
+        padding-top: 80px; /* Reduz o espaço do header */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .chat-header {
+        padding: 15px;
+        position: sticky;
+        top: 80px; /* Considera o espaço do header principal */
+    }
+
+    .chat-messages {
+        padding: 10px;
+        margin-bottom: 70px; /* Espaço para o input */
+    }
+
+    .message {
+        max-width: 85%; /* Mensagens mais largas em mobile */
+        padding: 10px 12px;
+    }
+
+    .message.received {
+        margin: 8px 0 8px 15px; /* Margens menores */
+        padding: 8px 20px;
+    }
+
+    .message.sent {
+        margin: 8px 15px 8px 0; /* Margens menores */
+        padding: 8px 20px;
+    }
+
+    .message-text {
+        font-size: 0.9rem;
+    }
+
+    .chat-input {
+        padding: 10px;
+    }
+
+    .chat-input input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .chat-input button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    /* Ajuste para a barra de navegação do iPhone */
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+        .chat-input {
+            padding-bottom: calc(10px + env(safe-area-inset-bottom));
+        }
+        .chat-messages {
+            margin-bottom: calc(70px + env(safe-area-inset-bottom));
+        }
+    }
+}
+
+/* Ajustes para telas um pouco maiores que mobile mas ainda pequenas */
+@media only screen and (min-width: 429px) and (max-width: 768px) {
+    .message {
+        max-width: 75%;
+    }
+    
+    .message.received {
+        margin-left: 50px;
+    }
+    
+    .message.sent {
+        margin-right: 50px;
+    }
+}
+/* Ajustes específicos para mobile - Versão com mensagens mais largas */
+@media only screen and (max-width: 428px) { /* iPhone 13 Pro Max tem 428px de largura */
+    /* ... (mantenha todos os outros estilos anteriores) ... */
+
+    .message {
+        max-width: 90%; /* Aumentei de 85% para 90% */
+        min-width: 70%; /* Largura mínima garantida */
+        padding: 12px 15px; /* Aumentei o padding lateral */
+    }
+
+    .message.received {
+        margin: 8px 0 8px 10px; /* Reduzi a margem esquerda */
+        padding: 10px 25px; /* Aumentei o padding */
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 18px;
+    }
+
+    .message.sent {
+        margin: 8px 10px 8px 0; /* Reduzi a margem direita */
+        padding: 10px 25px; /* Aumentei o padding */
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 18px;
+    }
+
+    /* Ajuste para mensagens muito curtas */
+    .message-text {
+        min-width: 60%; /* Evita que mensagens muito curtas fiquem estreitas */
+        display: inline-block;
+    }
+}
+
+/* Ajustes para telas médias */
+@media only screen and (min-width: 429px) and (max-width: 768px) {
+    .message {
+        max-width: 80%; /* Aumentei de 75% para 80% */
+        min-width: 60%;
+    }
+    
+    .message.received {
+        margin-left: 40px; /* Reduzi a margem */
+    }
+    
+    .message.sent {
+        margin-right: 40px; /* Reduzi a margem */
+    }
+}
+
+/* Ajuste geral para todas as telas (incluindo desktop) */
+.message {
+    max-width: 65%; /* Reduzi levemente a largura máxima padrão */
+    min-width: 30%; /* Largura mínima para evitar mensagens estreitas */
+}
