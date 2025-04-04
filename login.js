@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Redirecionar após breve delay para ver a animação
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "page.html";
             }, 1000);
         } else {
             // Efeito visual de erro
