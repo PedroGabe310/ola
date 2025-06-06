@@ -83,12 +83,12 @@ function handleTouchMove(evt) {
         const secondsup = Math.floor((diff % (1000 * 60)) / 1000);
         
 
-        document.getElementById('years').textContent = yearsup.toString().padStart(2, '0');
-        document.getElementById('months').textContent = monthsup.toString().padStart(2, '0');
-        document.getElementById('days').textContent = daysup.toString().padStart(2, '0');
-        document.getElementById('hours').textContent = hoursup.toString().padStart(2, '0');
-        document.getElementById('minutes').textContent = minutesup.toString().padStart(2, '0');
-        document.getElementById('seconds').textContent = secondsup.toString().padStart(2, '0');
+        document.getElementById('yearsup').textContent = yearsup.toString().padStart(2, '0');
+        document.getElementById('monthsup').textContent = monthsup.toString().padStart(2, '0');
+        document.getElementById('daysup').textContent = daysup.toString().padStart(2, '0');
+        document.getElementById('hoursup').textContent = hoursup.toString().padStart(2, '0');
+        document.getElementById('minutesup').textContent = minutesup.toString().padStart(2, '0');
+        document.getElementById('secondsup').textContent = secondsup.toString().padStart(2, '0');
     }
     
 
