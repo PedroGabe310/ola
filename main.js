@@ -69,26 +69,26 @@ function handleTouchMove(evt) {
         const diff = now - startDate;
         
         
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        const yearsup = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
         
 
-        const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+        const monthsup = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
         
 
-        const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const daysup = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
         
 
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        const hoursup = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesup = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsup = Math.floor((diff % (1000 * 60)) / 1000);
         
 
-        document.getElementById('years').textContent = years.toString().padStart(2, '0');
-        document.getElementById('months').textContent = months.toString().padStart(2, '0');
-        document.getElementById('days').textContent = days.toString().padStart(2, '0');
-        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        document.getElementById('years').textContent = yearsup.toString().padStart(2, '0');
+        document.getElementById('months').textContent = monthsup.toString().padStart(2, '0');
+        document.getElementById('days').textContent = daysup.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hoursup.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutesup.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = secondsup.toString().padStart(2, '0');
     }
     
 
