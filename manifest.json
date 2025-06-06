@@ -1,0 +1,21 @@
+{
+    "name": "Olá - Web App",
+    "short_name": "Olá",
+    "start_url": "./page.html",
+    "display": "standalone",
+    "background_color": "#e6005c",
+    "theme_color": "#e6005c",
+    "icons": [
+      {
+        "src": "icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

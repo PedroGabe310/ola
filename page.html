@@ -6,6 +6,8 @@
     <title>Um presente pro meu amor</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e6005c">
 </head>
 <body>
     <header>
@@ -153,7 +155,13 @@
     <!-- </section> -->
     </main>
 
-    <script src="main.js"></script>
+    <script src="main.js">
+        if ('serviceWorker' in navigator) {
+             navigator.serviceWorker.register('service-worker.js')
+            .then(reg => console.log('Service Worker registrado', reg))
+            .catch(err => console.error('Erro no Service Worker', err));
+            }
+     </script>
     
 </body>
 </html>
