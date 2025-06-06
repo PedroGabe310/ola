@@ -96,7 +96,7 @@ function handleTouchMove(evt) {
     setInterval(updateCounter, 1000);
 
 
-const endDate = new Date('2025-05-09T22:00:00'); 
+const endDate = new Date('2025-06-13T02:00:00'); 
 function updateCountdown() {
     const now = new Date();
     const diff = endDate - now; 
