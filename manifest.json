@@ -1,7 +1,7 @@
 {
-    "name": "Olá - Web App",
-    "short_name": "Olá",
-    "start_url": "./page.html",
+    "name": "AMOR - Web App",
+    "short_name": "AMOR",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#e6005c",
     "theme_color": "#e6005c",

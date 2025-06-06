@@ -1,6 +1,6 @@
 const CACHE_NAME = 'ola-cache-v1';
 const URLS_TO_CACHE = [
-  './page.html',
+  './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
